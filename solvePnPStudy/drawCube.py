@@ -48,3 +48,5 @@ for p1_idx, p2_idx in [(0, 1), (1, 2), (2, 3), (3, 0), (4, 5), (5, 6), (6, 7), (
 cv2.imshow("Space", drawing_image)
 cv2.waitKey(0)
 cv2.destroyAllWindows()
+
+"""손 큐브 그리는 코드 추가 필요"""
