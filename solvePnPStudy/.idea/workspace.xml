@@ -5,11 +5,8 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bfb1248-0df0-4e3d-a041-c33c0fca2fa4" name="Changes" comment="">
-      <change afterPath="$PROJECT_DIR$/draw_cube_from_cap.py" afterDir="false" />
-      <change afterPath="$PROJECT_DIR$/objectron.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/solvePnPStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/solvePnPStudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/solvePnP.md" beforeDir="false" />
+      <change beforePath="$PROJECT_DIR$/docs/3D Hand Pose Estimation 공부한 것 정리.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3D Hand Pose Estimation 공부한 것 정리.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -39,7 +36,7 @@
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
     "WebServerToolWindowFactoryState": "false",
-    "last_opened_file_path": "C:/GIthub/GNU_AugumentedIntelligenceLab/solvePnPStudy",
+    "last_opened_file_path": "C:/GIthub/GNU_AugumentedIntelligenceLab/solvePnPStudy/hand_pose",
     "node.js.detected.package.eslint": "true",
     "node.js.detected.package.tslint": "true",
     "node.js.selected.package.eslint": "(autodetect)",
@@ -182,6 +179,7 @@
       <workItem from="1681191099924" duration="7242000" />
       <workItem from="1681282538863" duration="9000" />
       <workItem from="1681731510733" duration="794000" />
+      <workItem from="1681740512625" duration="772000" />
     </task>
     <servers />
   </component>
