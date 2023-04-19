@@ -221,7 +221,7 @@ with mp_hands.Hands(min_detection_confidence=0.6,
 
 ### MediaPipe 내부에 있는 요소 활용
 
-![Hand_Pipeline.png](C:\GIthub\GNU_AugumentedIntelligenceLab\solvePnPStudy\docs\Hand_Pipeline.png)
+![Hand_Pipeline.png](./Hand_Pipeline.png)
 
 출처: Lugaresi, C., Tang, J., Nash, H., McClanahan, C., Uboweja, E., Hays, M., ... & Grundmann, M. (2019). Mediapipe: A framework for building perception pipelines. *arXiv preprint arXiv:1906.08172*.
 
