@@ -211,17 +211,39 @@ with mp_hands.Hands(min_detection_confidence=0.6,
 
 <img src="./Solve%20Perspective%20N%20Point%20Double%20World/Solve%20Perspective%20N%20Point%20Double%20World_2.png" title="" alt="Solve Perspective N Point Double World_2.png" data-align="inline">
 
+1. 마커(큐브)를 촬영, 마커의 좌표계
+
+2. 마커(큐브)를 촬영한 이미지
+
 ![Solve Perspective N Point Double World_3.png](./Solve%20Perspective%20N%20Point%20Double%20World/Solve%20Perspective%20N%20Point%20Double%20World_3.png)
+
+3. 손을 촬영, 손의 좌표계
+
+4. 손을 촬영한 이미지
 
 ![Solve Perspective N Point Double World_4.png](./Solve%20Perspective%20N%20Point%20Double%20World/Solve%20Perspective%20N%20Point%20Double%20World_4.png)
 
+- 마커의 좌표계, 손의 좌표계를 동기화할 수 있을까?
+
 ![Solve Perspective N Point Double World_5.png](./Solve%20Perspective%20N%20Point%20Double%20World/Solve%20Perspective%20N%20Point%20Double%20World_5.png)
+
+1. 마커의 큐브와 손의 가상 큐브는 일치하는가?
+
+2. 현실에서 손의 한 점과 마커의 한 점이 같은 위치에 있다면?
+
+3. 두 점은 같은 화면에 나타나는가?
+
+4. 두 좌표계의 내부, 외부 파라미터는 일치하는가?
+
+5. 만약 다르다면 두 좌표계 간의 파라미터는 변환할 수 있는가?
 
 ![Solve Perspective N Point Double World_6.png](./Solve%20Perspective%20N%20Point%20Double%20World/Solve%20Perspective%20N%20Point%20Double%20World_6.png)
 
+-  solvePnP로 두 좌표계를 동기화할 수 있는 변환 식
+
 ### MediaPipe 내부에 있는 요소 활용
 
-![Hand_Pipeline.png](./Hand_Pipeline.png)
+![Hand_Pipeline.png](C:\GIthub\GNU_AugumentedIntelligenceLab\solvePnPStudy\docs\Hand_Pipeline.png)
 
 출처: Lugaresi, C., Tang, J., Nash, H., McClanahan, C., Uboweja, E., Hays, M., ... & Grundmann, M. (2019). Mediapipe: A framework for building perception pipelines. *arXiv preprint arXiv:1906.08172*.
 
