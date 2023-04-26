@@ -1,4 +1,29 @@
-# solvePnP 스터디
+# solvePnP Hand to world
+
+참가자: 이수원, 이민재, 황승현
+
+## 주제
+
+단안카메라 증강현실 구현 및 상용화 기술 연구
+
+1. 3D 공간에 물체 구현. K[R|t]w2c
+   1. [R|t]w2c의 역함수 [R|t]c2w 구함.
+   2. [R|t]c2w에 [P]c(물체의 카메라 상의 좌표 곱하면 [P]w(현실의 좌표) 나옴.
+2. Hand의 공간좌표 구현. K[R|t]h2c
+   1. [R|t]h2c에 [P]h(손의 좌표) 곱하면 [p]c(카메라 상의 좌표) 나옴
+3. [P]w와 [P]h 2개가 같은 곳에 있으면 증강현실 구현 완료
+
+## 해야할 일
+
+- OpenGL로 월드에 구 띄우기
+- 역함수 구하기.
+- 걸리는 시간 측정하기
+
+
+
+-----
+
+2023-04-26 기준 폐기
 
 ## 참가자
 
@@ -47,3 +72,5 @@
   
   - `E`pipolar Geometry, SolvePnP, MonoSLAM*에 관한 설명...
       https://www.youtube.com/watch?v=dVZ7G4fYv50
+
+# 

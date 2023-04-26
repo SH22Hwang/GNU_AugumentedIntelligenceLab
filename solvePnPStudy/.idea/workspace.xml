@@ -5,8 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bfb1248-0df0-4e3d-a041-c33c0fca2fa4" name="Changes" comment="">
+      <change afterPath="$PROJECT_DIR$/전송(230425)/.idea/전송(230425).iml" afterDir="false" />
+      <change afterPath="$PROJECT_DIR$/전송(230425)/230426_Rt_H2C.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/docs/3D Hand Pose Estimation 공부한 것 정리.md" beforeDir="false" afterPath="$PROJECT_DIR$/docs/3D Hand Pose Estimation 공부한 것 정리.md" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -27,6 +28,9 @@
     <option name="stateVersion" value="1" />
   </component>
   <component name="ProjectId" id="2NuWDQvDSV89J4u8Gb88yuUGEUc" />
+  <component name="ProjectLevelVcsManager">
+    <ConfirmationsSetting value="2" id="Add" />
+  </component>
   <component name="ProjectViewState">
     <option name="hideEmptyMiddlePackages" value="true" />
     <option name="showLibraryContents" value="true" />
@@ -35,6 +39,7 @@
   "keyToString": {
     "RunOnceActivity.OpenProjectViewOnStart": "true",
     "RunOnceActivity.ShowReadmeOnStart": "true",
+    "SHARE_PROJECT_CONFIGURATION_FILES": "true",
     "WebServerToolWindowFactoryState": "false",
     "last_opened_file_path": "C:/GIthub/GNU_AugumentedIntelligenceLab/solvePnPStudy/hand_pose",
     "node.js.detected.package.eslint": "true",
@@ -180,6 +185,7 @@
       <workItem from="1681282538863" duration="9000" />
       <workItem from="1681731510733" duration="794000" />
       <workItem from="1681740512625" duration="772000" />
+      <workItem from="1682487766235" duration="595000" />
     </task>
     <servers />
   </component>
