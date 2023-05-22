@@ -14,6 +14,7 @@ class Calibrator:
                         img = cv2.flip(img, 1)
                         cv2.imshow("캘리브레이션 캡쳐(Press Q to capture an image.)", img)
                         if cv2.waitKey(1) & 0xFF == ord("q"):
+                            cap.release()
                             cv2.destroyAllWindows()
                             break
 
@@ -24,7 +25,7 @@ class Calibrator:
 
             success, corners = cv2.findChessboardCorners(gray, SIZE, None)
             if success: return cv2.calibrateCamera([object_points], [corners], gray.shape[::-1], None, None)
-            print("코너 찾기 실패")
+            print("코너 찾기 실패(재촬영 시도 or 체크보드의 가로세로 코너 개수 확인 필요)")
             
     def calibrate():
         # 캘리브레이션
