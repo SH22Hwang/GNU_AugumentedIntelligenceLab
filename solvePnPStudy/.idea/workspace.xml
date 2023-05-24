@@ -5,11 +5,9 @@
   </component>
   <component name="ChangeListManager">
     <list default="true" id="2bfb1248-0df0-4e3d-a041-c33c0fca2fa4" name="Changes" comment="20230426">
-      <change afterPath="$PROJECT_DIR$/Sphere.py" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/misc.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/misc.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/.idea/solvePnPStudy.iml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/solvePnPStudy.iml" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/230425/sphere.py" beforeDir="false" afterPath="$PROJECT_DIR$/230425/sphere.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdea.py" beforeDir="false" afterPath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdea.py" afterDir="false" />
+      <change beforePath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdeaClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdeaClasses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -191,6 +189,7 @@
       <workItem from="1682500377368" duration="1809000" />
       <workItem from="1682998868059" duration="3940000" />
       <workItem from="1684299383181" duration="3845000" />
+      <workItem from="1684915201790" duration="1398000" />
     </task>
     <task id="LOCAL-00001" summary="20230426">
       <created>1682998903446</created>
