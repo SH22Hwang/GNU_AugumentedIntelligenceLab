@@ -1,6 +1,13 @@
 import cv2, numpy as np
 
 class Calibrator:
+    def calibrate():
+        # 캘리브레이션
+        camera_selection = int(input("손 촬영 카메라 선택(카메라가 1개라면 0을 입력하세요.) > "))
+        _, K, dist, calib_rvecs, calib_tvecs = Calibrator.getCalibratedResult(camera_selection)
+        extended_K, calib_R_t_with_0001 = MatrixHandler.extendMatrix("K", K), MatrixHandler.extendMatrix("[R|t]", calib_rvecs[0], calib_tvecs[0]) # calibration의 rvec, tvec은 return 될 때 사이즈 1짜리 튜플로 나와서 [0]을 해줘야 순수한 벡터가 나온다.
+        return K, extended_K, calib_R_t_with_0001, dist
+    
     def getCalibratedResult(camera_selection):
         while True:
             SIZE = tuple(map(int, input("체스보드 사이즈 입력 (ex. 9 7) > ").split()))
@@ -24,46 +31,44 @@ class Calibrator:
             object_points[0, :, :2] = np.mgrid[0 : SIZE[0], 0 : SIZE[1]].T.reshape(-1, 2)
 
             success, corners = cv2.findChessboardCorners(gray, SIZE, None)
-            if success: return cv2.calibrateCamera([object_points], [corners], gray.shape[::-1], None, None)
+            if success:
+                return cv2.calibrateCamera([object_points], [corners], gray.shape[::-1], None, None)
             print("코너 찾기 실패(재촬영 시도 or 체크보드의 가로세로 코너 개수 확인 필요)")
             
-    def calibrate():
-        # 캘리브레이션
-        camera_selection = int(input("캘리브레이션 카메라 선택(-1: use ImageFile, 0: Irium Webcam, 1: MacBook Camera) > "))
-        _, K, dist, calib_rvecs, calib_tvecs = Calibrator.getCalibratedResult(camera_selection)
-        extended_K, calib_R_t_with_0001 = MatrixHandler.extendMatrix("K", K), MatrixHandler.extendMatrix("[R|t]", calib_rvecs[0], calib_tvecs[0]) # calibration의 rvec, tvec은 return 될 때 사이즈 1짜리 튜플로 나와서 [0]을 해줘야 순수한 벡터가 나온다.
-        return K, extended_K, calib_R_t_with_0001, dist
     
 class MatrixHandler:
-    def extendMatrix(mode, *matrices):
-        if mode == "[R|t]":
+    def extendMatrix(mode, *matrices): # 행렬을 확장합니다.
+        if mode == "[R|t]": # 3x4 R|t 행렬을 4x4 행렬로 확장합니다.
             rvecs, tvecs = matrices
             R, _ = cv2.Rodrigues(rvecs)
             col_tvec = np.array([tvecs[0], tvecs[1], tvecs[2]])
             R_t = np.append(R, col_tvec, axis=1)
             R_t_with_0001 = np.append(R_t, [np.array([0, 0, 0, 1])], axis=0)
             return R_t_with_0001
-        elif mode == "K":
+        elif mode == "K": # 3x3 K 행렬을 3x4 행렬로 확장합니다.
             return np.append(matrices[0], np.array([[0], [0], [0]]), axis=1)
     
-    def scaleLastElementAs1(matrix):
+    def scaleLastElementAs1(matrix): # [sx, sy, s] -> s[x, y, 1] -> [x, y, 1] 즉, 마지막 원소를 1로 만들어 s(scaling)을 없앱니다.
         for line in matrix:
             line /= line[2]
         
         return matrix
 
-    def getMultipleMatricesAndCoords(K, extended_K, dist, calib_R_t_with_0001, model_points, image_points):
-        # H2C
+    def getCoordinates(K, extended_K, dist, calib_R_t_with_0001, model_points, image_points): 
+        # 캘리브레이션과 results.multi_hand_landmarks에서 구한 값들을 통해 solvePnP를 돌리고
+        # 그 rvec, tvec을 요리조리 조작하여 최종적으로 H2C_2D좌표, W2C_2D좌표를 리턴합니다.
+
+        # H2C 구하기
         success, solvepnp_rvecs, solvepnp_tvecs = cv2.solvePnP(model_points, image_points, K, dist, flags=cv2.SOLVEPNP_EPNP)
         H2C_MATRIX = MatrixHandler.extendMatrix("[R|t]", solvepnp_rvecs, solvepnp_tvecs)
 
         # H2C * H -> C
         hand_to_camera_coords = [H2C_MATRIX @ np.array([X, Y, Z, 1]) for X, Y, Z in model_points]
     
-        # W2C from calib_rvecs, calib_tvecs
+        # W2C 구하기 from calib_rvecs, calib_tvecs
         W2C_MATRIX = calib_R_t_with_0001
 
-        # W2C -> C2W
+        # W2C -> C2W 구하기
         C2W_MATRIX = np.linalg.inv(W2C_MATRIX)
 
         # C2W * C -> W
@@ -73,16 +78,16 @@ class MatrixHandler:
         world_to_camera_coords = [W2C_MATRIX @ np.array([X, Y, Z, 1]) for X, Y, Z, _ in camera_to_world_coords]
 
 
-        # 3D -> 2D
-        hand_to_camera_coords_to_2d = [extended_K @ h2c_3d_coords for h2c_3d_coords in hand_to_camera_coords]
-        world_to_camera_coords_to_2d = [extended_K @ w2c_3d_coords for w2c_3d_coords in world_to_camera_coords]
+        # 3D -> 2D 바꾼다음, 그 2D를 scaling 제거해서 순수한 카메라좌표계의 x, y 를 리턴합니다.
+        hand_to_camera_coords_to_2d = MatrixHandler.scaleLastElementAs1([extended_K @ h2c_3d_coords for h2c_3d_coords in hand_to_camera_coords])
+        world_to_camera_coords_to_2d = MatrixHandler.scaleLastElementAs1([extended_K @ w2c_3d_coords for w2c_3d_coords in world_to_camera_coords])
 
-        return MatrixHandler.scaleLastElementAs1(hand_to_camera_coords_to_2d), \
-               MatrixHandler.scaleLastElementAs1(world_to_camera_coords_to_2d)
+        return hand_to_camera_coords_to_2d, world_to_camera_coords_to_2d
 
 class Analyzer:
     def analyzeResult(image_points, hand_to_camera_coords_to_2d, world_to_camera_coords_to_2d, h, w, image=None):
-        ## 수치적 분석
+
+        ### 수치적 분석 ###
         for i in range(21):
             print("-------------------------------------------------------")
             mp_x, mp_y = image_points[i]
@@ -96,19 +101,12 @@ class Analyzer:
             # print("비율 차이 절댓값: %.10f" % abs(h2c_x / h2c_y - w2c_x / w2c_y))
 
 
-        ## 시각적 분석
+        ### 시각적 분석###
         # 1. H2C와 W2C 원(circle) 그리기
         for i in range(21):
             h2c_x, h2c_y, _ = map(int, hand_to_camera_coords_to_2d[i])
             w2c_x, w2c_y, _ = map(int, world_to_camera_coords_to_2d[i])
             image = cv2.circle(image, (h2c_x, h2c_y), 6, (0, 255, 0), 2)
-
-            # if w2c_x == 0:
-            #     continue
-            # ratio = h2c_x / w2c_x
-            # new_x, new_y = w2c_x * ratio, w2c_y * ratio
-            # if 0 <= new_x <= w and 0 <= new_y <= h:
-            #     image = cv2.circle(image, [*map(int, (new_x, new_y))], 10, (255, 0, 0), 2)
 
             if 0 <= h2c_x <= w and 0 <= h2c_y <= h and 0 <= w2c_x <= w and 0 <= w2c_y <= h:
                 image = cv2.circle(image, [*map(int, (h2c_x, h2c_y))], 6, (0, 255, 0), 2)
@@ -144,7 +142,7 @@ class Analyzer:
         return image
 
 class Processor:
-    def processImage(hands, image):
+    def processImage(hands, image): # 이미지 속성 및 랜드마크 분석결과 가져오기
         image = cv2.cvtColor(cv2.flip(image, 1), cv2.COLOR_BGR2RGB)
         image.flags.writeable = False
         results = hands.process(image)
