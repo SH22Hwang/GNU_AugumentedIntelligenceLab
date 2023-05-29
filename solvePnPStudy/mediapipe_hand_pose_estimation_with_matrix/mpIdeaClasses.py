@@ -62,7 +62,7 @@ class MatrixHandler:
         success, solvepnp_rvecs, solvepnp_tvecs = cv2.solvePnP(model_points, image_points, K, dist, flags=cv2.SOLVEPNP_EPNP)
         H2C_MATRIX = MatrixHandler.extendMatrix("[R|t]", solvepnp_rvecs, solvepnp_tvecs)
 
-        # H2C * H -> C
+        # H2C * H -> C @: numpy 행렬곱 연산자
         hand_to_camera_coords = [H2C_MATRIX @ np.array([X, Y, Z, 1]) for X, Y, Z in model_points]
     
         # W2C 구하기 from calib_rvecs, calib_tvecs

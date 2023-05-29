@@ -4,9 +4,8 @@
     <option name="autoReloadType" value="SELECTIVE" />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="2bfb1248-0df0-4e3d-a041-c33c0fca2fa4" name="Changes" comment="20230426">
+    <list default="true" id="2bfb1248-0df0-4e3d-a041-c33c0fca2fa4" name="Changes" comment="주석에 내가 해석한 것 추가함">
       <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
-      <change beforePath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdea.py" beforeDir="false" afterPath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdea.py" afterDir="false" />
       <change beforePath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdeaClasses.py" beforeDir="false" afterPath="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/mpIdeaClasses.py" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
@@ -51,7 +50,7 @@
     &quot;vue.rearranger.settings.migration&quot;: &quot;true&quot;
   }
 }</component>
-  <component name="RunManager" selected="Python.sphere">
+  <component name="RunManager" selected="Python.P28138">
     <configuration name="OpenCVGL_MP" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="solvePnPStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
@@ -74,7 +73,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="handtest" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="P28138" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="solvePnPStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -82,12 +81,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mp_pnp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mp_pnp/handtest.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/P28138.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -96,7 +95,7 @@
       <option name="INPUT_FILE" value="" />
       <method v="2" />
     </configuration>
-    <configuration name="main" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
+    <configuration name="main (1)" type="PythonConfigurationType" factoryName="Python" temporary="true" nameIsGenerated="true">
       <module name="solvePnPStudy" />
       <option name="INTERPRETER_OPTIONS" value="" />
       <option name="PARENT_ENVS" value="true" />
@@ -104,12 +103,12 @@
         <env name="PYTHONUNBUFFERED" value="1" />
       </envs>
       <option name="SDK_HOME" value="" />
-      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mp_pnp" />
+      <option name="WORKING_DIRECTORY" value="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix" />
       <option name="IS_MODULE_SDK" value="true" />
       <option name="ADD_CONTENT_ROOTS" value="true" />
       <option name="ADD_SOURCE_ROOTS" value="true" />
       <EXTENSION ID="PythonCoverageRunConfigurationExtension" runner="coverage.py" />
-      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mp_pnp/main.py" />
+      <option name="SCRIPT_NAME" value="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix/main.py" />
       <option name="PARAMETERS" value="" />
       <option name="SHOW_COMMAND_LINE" value="false" />
       <option name="EMULATE_TERMINAL" value="false" />
@@ -164,11 +163,11 @@
     </configuration>
     <recent_temporary>
       <list>
+        <item itemvalue="Python.P28138" />
+        <item itemvalue="Python.main (1)" />
         <item itemvalue="Python.sphere" />
         <item itemvalue="Python.OpenCVGL_MP" />
         <item itemvalue="Python.mp_pnp_test" />
-        <item itemvalue="Python.handtest" />
-        <item itemvalue="Python.main" />
       </list>
     </recent_temporary>
   </component>
@@ -189,7 +188,9 @@
       <workItem from="1682500377368" duration="1809000" />
       <workItem from="1682998868059" duration="3940000" />
       <workItem from="1684299383181" duration="3845000" />
-      <workItem from="1684915201790" duration="1398000" />
+      <workItem from="1684915201790" duration="2534000" />
+      <workItem from="1685071278064" duration="3085000" />
+      <workItem from="1685343412376" duration="1345000" />
     </task>
     <task id="LOCAL-00001" summary="20230426">
       <created>1682998903446</created>
@@ -198,7 +199,14 @@
       <option name="project" value="LOCAL" />
       <updated>1682998903446</updated>
     </task>
-    <option name="localTasksCounter" value="2" />
+    <task id="LOCAL-00002" summary="주석에 내가 해석한 것 추가함">
+      <created>1684920431495</created>
+      <option name="number" value="00002" />
+      <option name="presentableId" value="LOCAL-00002" />
+      <option name="project" value="LOCAL" />
+      <updated>1684920431495</updated>
+    </task>
+    <option name="localTasksCounter" value="3" />
     <servers />
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -206,11 +214,14 @@
   </component>
   <component name="VcsManagerConfiguration">
     <MESSAGE value="20230426" />
-    <option name="LAST_COMMIT_MESSAGE" value="20230426" />
+    <MESSAGE value="주석에 내가 해석한 것 추가함" />
+    <option name="LAST_COMMIT_MESSAGE" value="주석에 내가 해석한 것 추가함" />
   </component>
   <component name="com.intellij.coverage.CoverageDataManagerImpl">
     <SUITE FILE_PATH="coverage/solvePnPStudy$handtest.coverage" NAME="handtest Coverage Results" MODIFIED="1681732126968" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mp_pnp" />
+    <SUITE FILE_PATH="coverage/solvePnPStudy$P28138.coverage" NAME="P28138 Coverage Results" MODIFIED="1685344735165" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/solvePnPStudy$sphere.coverage" NAME="sphere Coverage Results" MODIFIED="1684305052286" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/230425" />
+    <SUITE FILE_PATH="coverage/solvePnPStudy$main__1_.coverage" NAME="main (1) Coverage Results" MODIFIED="1685073567760" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mediapipe_hand_pose_estimation_with_matrix" />
     <SUITE FILE_PATH="coverage/solvePnPStudy$drawCube.coverage" NAME="drawCube Coverage Results" MODIFIED="1681191493515" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
     <SUITE FILE_PATH="coverage/solvePnPStudy$main.coverage" NAME="main Coverage Results" MODIFIED="1681732098659" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$/mp_pnp" />
     <SUITE FILE_PATH="coverage/solvePnPStudy$objectron.coverage" NAME="objectron Coverage Results" MODIFIED="1681192545200" SOURCE_PROVIDER="com.intellij.coverage.DefaultCoverageFileProvider" RUNNER="coverage.py" COVERAGE_BY_TEST_ENABLED="true" COVERAGE_TRACING_ENABLED="false" WORKING_DIRECTORY="$PROJECT_DIR$" />
