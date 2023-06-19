@@ -5,29 +5,17 @@ OpenCV로 추출한 마커의 외부파라미터를 이용하여 Unity 3D 공간
 ## 목차
 
 1. 초록
-
 2. 연구 목적
-
 3. 연구의 중요성
-
 4. 연구의 제한점
-
 5. 상황
-
 6. 행동의 초점
-
 7. 기록
-
 8. 연구 일정
-
 9. 자료 수집
-
 10. 자료 분석
-
 11. 예상되는 최종 결과
-
 12. 윤리적 고려
-
 13. 참고 문헌
 
 ## 연구 목적
@@ -37,7 +25,6 @@ OpenCV로 추출한 마커의 외부파라미터를 이용하여 Unity 3D 공간
 - 기존의 여러 센서로 3D 공간을 스캔했는데, 카메라만으로 하자!
   
   - 애플의 비싼 MR 비전 프로. 접근성 떨어짐
-  
   - 카메라만으로 3D 스캔하자 (SLAM - Vuforia ?)
 
 - OpenCV로 추출한 외부파라미터를 이용해보자?
@@ -71,16 +58,31 @@ OpenCV로 추출한 마커의 외부파라미터를 이용하여 Unity 3D 공간
 1. 마커의 공간좌표 구하기
    
    1. OpenCV 마커의 외부파라미터 구하기
-   
    2. SolvePnP로 tvec, rvec 구함
 
 2. rvec, tvec를 이용하여 유니티 3D 공간에 똑같이 구현?
    
-   1. 가능한 지 모르겠음
-   
-   2. 어떻게 구현해야함?
+   1. test.cs?
 
 3. 구현한 3D 공간에 물체 띄우기
+
+
+
+### 생각할 점
+
+- Unity에서 rvec, tvec를 구할 수 있나?
+  
+  - ~~OpenCV에서 벡터 구해서 파일 export, Unity에서 Import~~
+    
+    - 속도 느릴 듯
+  
+  - ~~Asset: AR Foundation package, Vuforia SDK, or OpenCV for Unity asset~~
+    
+    - 연구 목표: Vuforia 등 쓰지 않는 것.
+  
+  - [opencvsharp](https://github.com/shimat/opencvsharp)
+  
+  - dll 파일 직접 만들기: [유니티에서 OpenCV 사용하기 - 3.실전(이미지 전달,통신)](https://darkstart.tistory.com/42?category=840167)
 
 ## 연구의 중요성
 
@@ -94,7 +96,7 @@ OpenCV로 추출한 마커의 외부파라미터를 이용하여 Unity 3D 공간
 
 ## 연구의 제한점
 
-- 센서 없이 
+- 센서 없이
 
 ## 이론적 배경 및 선행연구 고찰
 
